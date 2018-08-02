@@ -1,17 +1,16 @@
-appiumdemo
-==========
+appiumEbayMobile
+=================
+Testing of framework utilizing appuim
 
-a demo of testing framework utilizing appuim
-
-This demo framework was given the following requirements:
+This framework was given the following requirements:
 1. The framework should leverage existing mobile automation frameworks SeeTest/Appium
-2. Demo can be with any E-commerce mobile app. Can pick up any app on the AppStore which have few forms to submit and has data validation points.
+2. Project Ebay can be with any E-commerce mobile app. Can pick up any app on the AppStore which have few forms to submit and has data validation points.
 3. Can take up scenario like login to app & search for a product. Framework might not be robust but should take care of below points.
    a.Loosely coupled (Test data should be read from external file)
    b.Objects should not be hardcoded in the code.
    c.Reporting after test execution
 
-The demo is leveraging Appium framework for mobile tests automation. Application under test is eBay mobile app from google play store.
+The Project Ebay is leveraging Appium framework for mobile tests automation. Application under test is eBay mobile app from google play store.
 Demo has been tested only on Android simulator.
 
 The framework loads test data from properties files which represent elements on mobile app's screen.
