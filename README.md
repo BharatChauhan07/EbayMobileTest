@@ -1,38 +1,31 @@
-appiumEbayMobile
-=================
-Testing of framework utilizing appuim
+# PageObjectPatternAppium
 
-This framework was given the following requirements:
-1. The framework should leverage existing mobile automation frameworks SeeTest/Appium
-2. Project Ebay can be with any E-commerce mobile app. Can pick up any app on the AppStore which have few forms to submit and has data validation points.
-3. Can take up scenario like login to app & search for a product. Framework might not be robust but should take care of below points.
-   a.Loosely coupled (Test data should be read from external file)
-   b.Objects should not be hardcoded in the code.
-   c.Reporting after test execution
+To Run the TestNG test on android
+    
+    * Platform="android" mvn clean -Dtest=Runner test
 
-The Project Ebay is leveraging Appium framework for mobile tests automation. Application under test is eBay mobile app from google play store.
-Demo has been tested only on Android simulator.
+ To Run the TestNG test on iOS
+  
+    * Platform="ios" mvn clean -Dtest=Runner test
 
-The framework loads test data from properties files which represent elements on mobile app's screen.
-Thanks to this Element properties needed for tests can be added/modified without recompiling.
-Whole screens can be modified as well by adding/removing elements.
-Tests are executed with testNG unit testing framework which is as well responsible for creating execution reports.
-Execution is configured with use of maven surefire plugin.
+ To Run the TestNG test on iOS and android both in parallel
+  
+    * Platform="both" mvn clean -Dtest=Runner test
+    
+To Run the Cucumber test
 
 
-Installation guide:
+    * mvn validate && Platorm="android" mvn clean -Dtest=RunnerCukes test    
 
-Prerequisites:
- - PC with any mobile device/VM attached and with running Appium server application
- - eBay mobile app apk downloaded into Appium server home directory
- - maven 3
- - java 7 jdk
+1.Please make sure you have capabilities.json  under caps folder.
 
-Running tests:
+2.RUNNER value in config.properties can be set with parallel or distribute. (Parallel will run the same test cases across devices & distribute will split the test cases randomly across devices)
 
-After cloning git repository, open project workspace and update properties files located in src/main/resources.
+3.No need to start appium server externally , framework takes case of starting and shutting down the server for you.
 
-Run from terminal:
-mvn test
+Post Run :
 
-Test execution reports will be generated in <project-home-dir>/target/surefire-reports directory
+Once the test run is completed, HTML report will b generated at target/ExtentReport.html
+
+If you have used ScreenshotManager to capture screenshots on runtime, you can execute generate_report.sh to view detailed reports
+
